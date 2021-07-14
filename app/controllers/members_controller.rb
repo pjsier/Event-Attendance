@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
     before_action :set_member, only: [:show, :edit, :update, :destroy]
-    #layout 'customer_layout'
+    layout 'member_layout'
 
     # GET /members
     # GET /members.json
@@ -53,7 +53,7 @@ class MembersController < ApplicationController
     def destroy
         @member.destroy
         respond_to do |format|
-        format.html { redirect_to customers_url, notice: 'Member was successfully destroyed.' }
+        format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
         format.json { head :no_content }
         end
     end
