@@ -12,6 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20_210_709_111_540) do
   create_table 'Events', force: :cascade do |t|
     t.string 'description'
@@ -29,6 +30,35 @@ ActiveRecord::Schema.define(version: 20_210_709_111_540) do
     t.date 'anniversary'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+=======
+ActiveRecord::Schema.define(version: 2021_07_11_084956) do
+
+  create_table "Events", force: :cascade do |t|
+    t.string "description"
+    t.datetime "event_date"
+    t.string "event_location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "events_members", force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "member_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_events_members_on_event_id"
+    t.index ["member_id"], name: "index_events_members_on_member_id"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone"
+    t.date "birthday"
+    t.date "anniversary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+>>>>>>> origin
   end
 
   create_table 'users', force: :cascade do |t|
@@ -42,4 +72,10 @@ ActiveRecord::Schema.define(version: 20_210_709_111_540) do
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
+<<<<<<< HEAD
+=======
+
+  add_foreign_key "events_members", "events"
+  add_foreign_key "events_members", "members"
+>>>>>>> origin
 end

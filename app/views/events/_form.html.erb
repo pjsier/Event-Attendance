@@ -22,7 +22,7 @@
     </div>
   
     <div class="field">
-      <%= f.label :event_location %>
+      <%= f.label :event_address %>
       <%= f.text_field :event_location %>
     </div>
   
@@ -30,4 +30,21 @@
       <%= f.submit %>
     </div>
   <% end %>
-  
+
+  <br>
+  <h1> Attendees </h1>
+  <%= form_for(@event) do |f| %>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <%= f.collection_check_boxes :member_ids, Member.all, :id, :full_name do |cb| %>
+                  <% cb.label(class: "checkbox-inline input_checkbox" ) {cb.check_box(class: "checkbox") + cb.text} %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+  <% end %>

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
+<<<<<<< HEAD
   rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
   before_action :set_event, only: %i[show edit update destroy]
   # layout 'customer_layout'
@@ -14,6 +15,26 @@ class EventsController < ApplicationController
   # GET /members/1
   # GET /members/1.json
   def show; end
+=======
+    rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
+    before_action :set_event, only: [:show, :edit, :update, :destroy]
+    layout 'event_layout'
+
+    # GET /events
+    # GET /events.json
+    def index
+        #@events = Event.all
+        # Scope your query to the dates being shown:
+        start_date = params.fetch(:event_date, Date.today).to_date
+        @events = Event.where(event_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)        
+    end
+
+    # GET /events/1
+    # GET /events/1.json
+    def show
+        @members = @event.members.all
+    end
+>>>>>>> origin
 
   # GET /event/new
   def new
@@ -65,10 +86,29 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+<<<<<<< HEAD
   # Only allow a list of trusted parameters through.
   def event_params
     params.require(:event).permit(:description, :event_date, :event_location)
   end
+=======
+    private
+        # Use callbacks to share common setup or constraints between actions.
+        def set_event
+            @event = Event.find(params[:id])
+        end
+  
+        # Only allow a list of trusted parameters through.
+        def event_params
+            params.require(:event).permit(:description, :event_date, :event_location, member_ids: [])
+        end
+  
+      def catch_not_found(e)
+        Rails.logger.debug("We had a not found exception.")
+        flash.alert = e.to_s
+        redirect_to events_path
+      end 
+>>>>>>> origin
 
   def catch_not_found(e)
     Rails.logger.debug('We had a not found exception.')

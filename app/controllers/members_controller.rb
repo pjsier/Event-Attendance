@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
 class MembersController < ApplicationController
+<<<<<<< HEAD
   rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
   before_action :set_member, only: %i[show edit update destroy]
   # layout 'customer_layout'
+=======
+    rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
+    before_action :set_member, only: [:show, :edit, :update, :destroy]
+    layout 'member_layout'
+>>>>>>> origin
 
   # GET /members
   # GET /members.json
@@ -48,6 +54,7 @@ class MembersController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
@@ -55,6 +62,16 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to customers_url, notice: 'Member was successfully destroyed.' }
       format.json { head :no_content }
+=======
+    # DELETE /customers/1
+    # DELETE /customers/1.json
+    def destroy
+        @member.destroy
+        respond_to do |format|
+        format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
+        format.json { head :no_content }
+        end
+>>>>>>> origin
     end
   end
 

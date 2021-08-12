@@ -18,10 +18,21 @@ gem 'puma', '~> 5.0'
 gem 'devise'
 gem 'devise_materialize', '~>1.2.0'
 gem 'jquery-rails'
+<<<<<<< HEAD
 gem 'material_icons'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'sass-rails', '>= 6'
 gem 'simple_form'
+=======
+gem 'bootstrap', '~> 5.0.1'
+gem "bootstrap_form", ">= 4.0.0.alpha1"
+gem 'devise' # gem 'devise-i18n'
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
+# gem 'devise_invitable'
+gem 'devise-bootstrap-form'
+gem "simple_form"
+gem "simple_calendar", "~> 2.4"
+>>>>>>> origin
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
