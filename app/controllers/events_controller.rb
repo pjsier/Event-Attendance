@@ -1,17 +1,21 @@
 class EventsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
     before_action :set_event, only: [:show, :edit, :update, :destroy]
-    #layout 'customer_layout'
+    layout 'event_layout'
 
     # GET /events
     # GET /events.json
     def index
-        @events = Event.all
+        #@events = Event.all
+        # Scope your query to the dates being shown:
+        start_date = params.fetch(:event_date, Date.today).to_date
+        @events = Event.where(event_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)        
     end
 
-    # GET /members/1
-    # GET /members/1.json
+    # GET /events/1
+    # GET /events/1.json
     def show
+        @members = @event.members.all
     end
 
     # GET /event/new
@@ -67,7 +71,7 @@ class EventsController < ApplicationController
   
         # Only allow a list of trusted parameters through.
         def event_params
-            params.require(:event).permit(:description, :event_date, :event_location )
+            params.require(:event).permit(:description, :event_date, :event_location, member_ids: [])
         end
   
       def catch_not_found(e)

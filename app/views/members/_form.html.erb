@@ -33,7 +33,7 @@
 
     <div class="field">
       <%= f.label :anniversary %>
-      <%= f.date_select(:anniversary, order: [:month, :day] ) %>
+      <%= f.date_select(:anniversary, order: [:month, :day], include_blank: true ) %>
     </div>
   
     <div class="actions">

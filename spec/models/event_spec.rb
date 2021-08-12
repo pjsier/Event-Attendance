@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  subject { Event.new(description: "Sunday Service", event_date: "07-17-2020", event_location: "234 Gebroni Road, Raleigh, NC 12345" )}
+  subject { Event.new(description: "Sunday Service", event_date: "2021-07-17", event_location: "234 Gebroni Road, Raleigh, NC 12345" )}
   it "is valid with valid attributes" do
     expect(subject).to be_valid
   end

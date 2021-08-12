@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Member, type: :model do
-  subject { Member.new(first_name: "Jack", last_name: "Smith", phone: "8889995678", birthday: 01/01/1900 )}
+  subject { Member.new(first_name: "Jack", last_name: "Smith", phone: "8889995678", birthday: "2021-07-17" )}
   it "is valid with valid attributes" do
     expect(subject).to be_valid
   end
