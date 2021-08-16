@@ -1,25 +1,12 @@
-<div class="row img-txt gx-7">
+<div class="row img-txt gx-7 p-5 pt-1">
 
   <!--only visible if user is signed in--->
 
   <% if user_signed_in? %>
-    <div class="col order-lg-2 text-center my-auto">
-        <a class='btn btn-outline-primary' href='/events'>My Events</a>
+    <div class="col-6 d-grid gap-2 order-lg-2 text-center m-auto event-button">
+        <a class='btn btn-primary' href='/events'>My Events</a>
     </div>
   <% end %>
-
-  <!--only visible on large screens (>900px)--->
-
-  <div class='col order-lg-3 big-screen-content'>
-    <h3 class="mb-4 text-center">Event Types</h3>
-      <ul class="list-group list-group-flush">
-        <% events_array = [ 'Church Events', 'School Functions', 'Networking Conferences', 'Master Classes', 'Zoom Meetings'] %>
-
-        <% events_array.each do |event| %>
-          <li class="list-group-item list-group-item-action text-center"><strong><%= event %></strong></li>
-        <% end %>
-      </ul>
-  </div>
 
   <!--only visible on small/medium screens (<900px)--->
 
