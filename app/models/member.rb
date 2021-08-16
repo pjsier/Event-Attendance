@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Member < ApplicationRecord
     has_and_belongs_to_many :events
     validates :first_name, presence: true
@@ -7,7 +9,7 @@ class Member < ApplicationRecord
     validates :phone, length: { is: 10 }
     validates :birthday, presence: true
 
-    def full_name
-        "#{first_name} #{last_name}"
-    end
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

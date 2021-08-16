@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
@@ -5,16 +7,16 @@ RSpec.describe Event, type: :model do
   it "is valid with valid attributes" do
     expect(subject).to be_valid
   end
-  it "is not valid without a description" do
-    subject.description=nil
+  it 'is not valid without a description' do
+    subject.description = nil
     expect(subject).to_not be_valid
   end
-  it "is not valid without a date" do
-    subject.event_date=nil
+  it 'is not valid without a date' do
+    subject.event_date = nil
     expect(subject).to_not be_valid
   end
-  it "is not valid without a location" do
-    subject.event_location=nil
+  it 'is not valid without a location' do
+    subject.event_location = nil
     expect(subject).to_not be_valid
   end
 end
