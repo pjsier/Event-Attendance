@@ -19,17 +19,46 @@
  @import "bootstrap";
  @import "rails_bootstrap_forms";
 
- .footnote {
-     max-height: 10vh;
+ .disappearing-link {
+     display: block;
+ }
+
+ .appearing-link {
+     display: none;
+ }
+ 
+ .carousel-imgs {
+     max-height: 40vh;
  }
 
  .img-txt {
     flex-direction: column;
+    opacity: 100%;
+ }
+
+ .big-screen-content {
+     display: none;
+ }
+
+ .small-screen-content {
+     display: block;
+ }
+
+ .footnote {
+     max-height: 10vh;
  }
 
  @media only screen and (min-width: 900px) {
     body {
       background-color: lightblue;
+    }
+
+    .disappearing-link {
+        display: none;
+    }
+
+    .appearing-link {
+        display: block;
     }
 
     .main-div {
@@ -41,6 +70,7 @@
     .carousel-imgs {
         position: relative;
         color: white;
+        max-height: 90vh;
     }
 
     .img-txt {
@@ -51,5 +81,14 @@
         width: 70vw;
         justify-content: space-between;
         transform: translate(-50%, -50%);
+        opacity: 90%;
+    }
+
+    .big-screen-content {
+        display: block;
+    }
+
+    .small-screen-content {
+        display: none;
     }
   }

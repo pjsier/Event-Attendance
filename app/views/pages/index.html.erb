@@ -1,12 +1,16 @@
 <div class="row img-txt gx-7">
 
+  <!--only visible if user is signed in--->
+
   <% if user_signed_in? %>
     <div class="col order-lg-2 text-center my-auto">
-        <a class='nav-link' href='/events'>View My Events</a>
+        <a class='btn btn-outline-primary' href='/events'>My Events</a>
     </div>
   <% end %>
 
-  <div class='col order-lg-3'>
+  <!--only visible on large screens (>900px)--->
+
+  <div class='col order-lg-3 big-screen-content'>
     <h3 class="mb-4 text-center">Event Types</h3>
       <ul class="list-group list-group-flush">
         <% events_array = [ 'Church Events', 'School Functions', 'Networking Conferences', 'Master Classes', 'Zoom Meetings'] %>
@@ -16,4 +20,15 @@
         <% end %>
       </ul>
   </div>
+
+  <!--only visible on small/medium screens (<900px)--->
+
+  <div class="row small-screen-content">
+    <div class="col-lg order-lg-1 text-center">
+      <h3 class="mb-4">About EventTrackr</h3>
+        <p>A website designed with the purpose of streamlining role call for events of all types.</p>
+        <p>The built in analytics and reporting functionality will perform the menial calculations for you and free up your time for other tasks.</p>
+    </div>
+  </div>
+  
 </div>
