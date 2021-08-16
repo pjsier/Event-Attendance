@@ -1,5 +1,12 @@
-<div class="container-fluid">
-  <div class="col-lg order-lg-3">
+<div class="row">
+
+  <% if user_signed_in? %>
+    <div class="col order-lg-3 text-center my-auto">
+        <a class='nav-link' href='/events'>View My Events</a>
+    </div>
+  <% end %>
+
+  <div class='col order-lg-3'>
     <h3 class="mb-4 text-center">Event Types</h3>
       <ul class="list-group list-group-flush">
         <% events_array = [ 'Church Events', 'School Functions', 'Networking Conferences', 'Master Classes', 'Zoom Meetings'] %>

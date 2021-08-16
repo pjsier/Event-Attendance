@@ -11,9 +11,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id="home" data-spy="scroll" data-target=".navbar" data-offset="100">
+  <body class='bg-light bg-gradient' id="home" data-spy="scroll" data-target=".navbar" data-offset="100">
 
-    <div class='container'>
+    <div class='container-lg'>
 
         <%= render 'layouts/navbar' %>
 
@@ -31,7 +31,7 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <%= image_tag 'cross.jpg', class: "d-block w-100", style: 'height:50vw;width:100vw;margin-bottom:5px;' %>
+                    <%= image_tag 'cross.jpg', class: "d-block img-fluid", style: 'height:50vh;width:100vw;margin-bottom:5px;z-index:0;' %>
                 </div>
 
                 <% image_tag_array = [ 'fun-event.jpg', 'church-event-two.jpg', 'bible-study.jpg', 'church-event.jpg',
@@ -40,7 +40,7 @@
 
                 <% image_tag_array.each do |tag| %>
                     <div class="carousel-item">
-                        <%= image_tag tag, class: "d-block w-100", style: 'height:50vw;width:100vw;margin-bottom:5px;' %>
+                        <%= image_tag tag, class: "d-block img-fluid", style: 'height:50vh;width:100vw;margin-bottom:5px;z-index:0' %>
                     </div>
                 <% end %>
 
