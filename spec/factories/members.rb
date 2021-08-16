@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# frozen_string_literal: true
-
-FactoryBot.define do
-  factory :member do
-=======
 require 'faker'
 FactoryBot.define do
   factory :member do |f|
@@ -12,6 +6,5 @@ FactoryBot.define do
     f.phone { Faker::Number.number(digits: 10) }
     f.birthday { "2021-07-17" }
     f.anniversary { "2021-07-17" }
->>>>>>> origin
   end
 end

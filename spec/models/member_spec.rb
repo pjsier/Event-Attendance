@@ -3,14 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Member, type: :model do
-<<<<<<< HEAD
-  subject { Member.new(first_name: 'Jack', last_name: 'Smith', phone: '8889995678', birthday: '1/1/1900') }
-  it 'is valid with valid attributes' do
-    byebug
-=======
   subject { Member.new(first_name: "Jack", last_name: "Smith", phone: "8889995678", birthday: "2021-07-17" )}
   it "is valid with valid attributes" do
->>>>>>> origin
     expect(subject).to be_valid
   end
   it 'is not valid without a first_name' do

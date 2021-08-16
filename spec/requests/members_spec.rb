@@ -2,11 +2,6 @@
 
 require 'rails_helper'
 
-<<<<<<< HEAD
-RSpec.describe 'Members', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
-=======
 RSpec.describe "MembersControllers", type: :request do
   describe "get members_path" do
     it "renders the index view" do
@@ -14,7 +9,6 @@ RSpec.describe "MembersControllers", type: :request do
       get members_path
       expect(response).to render_template(:index)
     end
->>>>>>> origin
   end
   describe "get member_path" do
     it "renders the :show template" do
