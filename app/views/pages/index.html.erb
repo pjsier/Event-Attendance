@@ -1,20 +1,12 @@
 <div class="container-fluid">
-<!--  about    -->
-<div id="about" class="row">
-  <div class="col-lg order-lg-1">
-    <h3 class="mb-4">About EventTrackr</h3>
-      <p>A website designed with the purpose of streamlining role call for events of all types.</p>
-      <p>The built in analytics and reporting functionality will perform the menial calculations for you and free up your time for other tasks.</p>
-  </div>
   <div class="col-lg order-lg-3">
     <h3 class="mb-4">Event Types</h3>
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action"><strong>Church Events</strong></a>
-        <a href="#" class="list-group-item list-group-item-action"><strong>School Functions</strong></a>
-        <a href="#" class="list-group-item list-group-item-action"><strong>Networking Conferences</strong></a>
-        <a href="#" class="list-group-item list-group-item-action"><strong>Meetups</strong></a>
-        <a href="#" class="list-group-item list-group-item-action"><strong>Master Classes</strong></a>
-        <a href="#" class="list-group-item list-group-item-action"><strong>Zoom Meetings</strong></a>
-      </div>
+      <ul class="list-group list-group-flush">
+        <% events_array = [ 'Church Events', 'School Functions', 'Networking Conferences', 'Master Classes', 'Zoom Meetings'] %>
+
+        <% events_array.each do |event| %>
+          <li class="list-group-item list-group-item-action"><strong><%= event %></strong></li>
+        <% end %>
+      </ul>
   </div>
 </div>
