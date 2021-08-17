@@ -3,7 +3,7 @@
 class MembersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
     before_action :set_member, only: [:show, :edit, :update, :destroy]
-    layout 'member_layout'
+    layout 'event_layout'
 
   # GET /members
   # GET /members.json

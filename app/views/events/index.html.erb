@@ -1,19 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid mb-4 gy-4 p-5 pt-1">
 
-<div class="container-fluid">
+    <div class='row pt-0'>
+        <%= link_to 'Members', members_path %>
+    </div>
 
-    <%= link_to 'Members', members_path %>
-    <h1>Events</h1>
+    <div class='row'>
+        <h1>Events</h1>
+    </div>
 
-    <%= month_calendar(events: @events) do |date, events| %>
-        <%= date.day %>
-    
-        <% events.each do |event| %>
-        <div>
-        <%= link_to event.description, event_path(id: event.id) %>
-        </div>
+    <div class='row'>
+        <%= month_calendar(events: @events) do |date, events| %>
+            <%= date.day %>
+        
+            <% events.each do |event| %>
+            <div>
+            <%= link_to event.description, event_path(id: event.id) %>
+            </div>
+            <% end %>
         <% end %>
-    <% end %>
+    </div>
 
-    <%= link_to 'New Event', new_event_path %>
+    <div class='row pb-1'>
+        <%= link_to 'New Event', new_event_path %>
+    </div>
+
 </div>

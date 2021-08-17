@@ -18,3 +18,86 @@
  @import "simple_calendar";
  @import "bootstrap";
  @import "rails_bootstrap_forms";
+
+ .about-div {
+    flex-direction: column;
+}
+
+ .disappearing-link {
+     display: block;
+ }
+ 
+ .carousel-imgs {
+     max-height: 40vh;
+ }
+
+ .img-txt {
+    display:block;
+    opacity: 100%;
+ }
+
+ .event-button {
+     padding-top: 0px;
+     padding-bottom: 25px;
+ }
+
+ .big-screen-content {
+     display: none;
+ }
+
+ .small-screen-content {
+     display: block;
+ }
+
+ .footnote {
+     max-height: 10vh;
+ }
+
+ @media only screen and (min-width: 900px) {
+    body {
+      background-color: lightblue;
+    }
+
+    .about-div {
+        flex-direction: row;
+    }
+
+    .disappearing-link {
+        display: none;
+    }
+
+    .main-div {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .carousel-imgs {
+        position: relative;
+        color: white;
+        max-height: 90vh;
+    }
+
+    .img-txt {
+        position: absolute;
+        flex-direction: row;
+        top: 50%;
+        left: 50%;
+        width: 70vw;
+        justify-content: space-between;
+        transform: translate(-50%, -50%);
+        opacity: 90%;
+    }
+
+    .event-button {
+        padding: 0px;
+    }
+
+    .big-screen-content {
+        display: block;
+    }
+
+    .small-screen-content {
+        display: none;
+    }
+  }

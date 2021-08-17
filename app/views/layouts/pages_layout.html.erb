@@ -13,11 +13,17 @@
 
   <body class='bg-light bg-gradient' id="home" data-spy="scroll" data-target=".navbar" data-offset="100">
 
-    <div class='container-lg'>
+    <!--outer div-->
+
+    <div class='container-lg main-div'>
 
         <%= render 'layouts/navbar' %>
 
+        <!--image carousel div-->
+
         <div id="carouselExampleIndicators" class="carousel slide row" data-bs-ride="carousel">
+
+            <!--carousel indicators (at bottom of images)-->
 
             <div class="carousel-indicators mx-auto">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to= 0 class="active" aria-current="true" aria-label="Slide 0"></button>
@@ -29,9 +35,11 @@
                 <% end %>
             </div>
 
-            <div class="carousel-inner">
+            <!--carousel images-->
+
+            <div class="carousel-inner carousel-imgs">
                 <div class="carousel-item active">
-                    <%= image_tag 'cross.jpg', class: "d-block img-fluid", style: 'height:50vh;width:100vw;margin-bottom:5px;z-index:0;' %>
+                    <%= image_tag 'cross.jpg', class: "d-block container-lg" %>
                 </div>
 
                 <% image_tag_array = [ 'fun-event.jpg', 'church-event-two.jpg', 'bible-study.jpg', 'church-event.jpg',
@@ -40,18 +48,20 @@
 
                 <% image_tag_array.each do |tag| %>
                     <div class="carousel-item">
-                        <%= image_tag tag, class: "d-block img-fluid", style: 'height:50vh;width:100vw;margin-bottom:5px;z-index:0' %>
+                        <%= image_tag tag, class: "d-block container-lg" %>
                     </div>
                 <% end %>
 
             </div>
 
+            <!--forward/previous buttons (on side of images)-->
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="carousel-control-prev-icon ml-2" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="carousel-control-next-icon mr-2" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
 
@@ -66,7 +76,7 @@
 
         <%= render 'layouts/footer' %>
 
-    </div>
+    </div>          <!--ends outer div-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
