@@ -19,6 +19,11 @@
  @import "bootstrap";
  @import "rails_bootstrap_forms";
 
+ 
+ .main-div {
+    background-color: rgb(218, 232, 248);
+  }
+
  .about-div {
     flex-direction: column;
 }
@@ -54,8 +59,8 @@
  }
 
  @media only screen and (min-width: 900px) {
-    body {
-      background-color: lightblue;
+    .main-div {
+      background-color: rgb(255, 255, 255);
     }
 
     .about-div {
