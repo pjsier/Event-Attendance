@@ -15,16 +15,16 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 
 # Use SCSS for stylesheets
-gem 'devise_materialize', '~>1.2.0'
-gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.1'
-gem "bootstrap_form", ">= 4.0.0.alpha1"
+gem 'bootstrap_form', '>= 4.0.0.alpha1'
 gem 'devise' # gem 'devise-i18n'
 gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
+gem 'devise_materialize', '~>1.2.0'
+gem 'jquery-rails'
 # gem 'devise_invitable'
 gem 'devise-bootstrap-form'
-gem "simple_form"
-gem "simple_calendar", "~> 2.4"
+gem 'simple_calendar', '~> 2.4'
+gem 'simple_form'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
