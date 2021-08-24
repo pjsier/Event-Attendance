@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
   after_create :new_user_email
   def new_user_email 
-    UserMailer.with(user: @user).new_user_email.deliver_now
+    UserMailer.with(user: self).new_user_email.deliver_now
   end
 end
