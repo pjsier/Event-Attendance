@@ -12,8 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    # byebug
-    UserMailer.with(user: @user).new_user_email.deliver_now
   end
 
   # GET /resource/edit
