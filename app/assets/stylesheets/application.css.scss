@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * require_tree .
+ * require_self
+ */
+ // import "bootstrap-sprockets";
+ // import "badges";
+ @import "simple_calendar";
+ @import "bootstrap";
+ @import "rails_bootstrap_forms";
+
+ 
+ .main-div {
+    background-color: rgb(218, 232, 248);
+  }
+
+ .about-div {
+    flex-direction: column;
+}
+
+ .disappearing-link {
+     display: block;
+ }
+ 
+ .carousel-imgs {
+     max-height: 40vh;
+ }
+
+ .img-txt {
+    display:block;
+    opacity: 100%;
+ }
+
+ .event-button {
+     padding-top: 0px;
+     padding-bottom: 25px;
+ }
+
+ .big-screen-content {
+     display: none;
+ }
+
+ .small-screen-content {
+     display: block;
+ }
+
+ .footnote {
+     max-height: 10vh;
+ }
+
+ @media only screen and (min-width: 900px) {
+    .main-div {
+      background-color: rgb(255, 255, 255);
+    }
+
+    .about-div {
+        flex-direction: row;
+    }
+
+    .disappearing-link {
+        display: none;
+    }
+
+    .main-div {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .carousel-imgs {
+        position: relative;
+        color: white;
+        max-height: 90vh;
+    }
+
+    .img-txt {
+        position: absolute;
+        flex-direction: row;
+        top: 50%;
+        left: 50%;
+        width: 70vw;
+        justify-content: space-between;
+        transform: translate(-50%, -50%);
+        opacity: 90%;
+    }
+
+    .event-button {
+        padding: 0px;
+    }
+
+    .big-screen-content {
+        display: block;
+    }
+
+    .small-screen-content {
+        display: none;
+    }
+  }

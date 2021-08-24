@@ -1,33 +1,21 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<div class="row img-txt gx-7 p-5 pt-1">
+
+  <!--only visible if user is signed in--->
+
+  <% if user_signed_in? %>
+    <div class="col-6 d-grid gap-2 order-lg-2 text-center m-auto event-button">
+        <a class='btn btn-primary' href='/events'>My Events</a>
+    </div>
+  <% end %>
+
+  <!--only visible on small/medium screens (<900px)--->
+
+  <div class="row small-screen-content">
+    <div class="col-lg order-lg-1 text-center">
+      <h3 class="mb-4">About EventTrackr</h3>
+        <p>A website designed with the purpose of streamlining role call for events of all types.</p>
+        <p>The built in analytics and reporting functionality will perform the menial calculations for you and free up your time for other tasks.</p>
+    </div>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <%= image_tag 'cross.jpg', class: "d-block w-100", style: 'height:50vw;width:100vw;margin-bottom:0px;' %>
-    </div>
-    <div class="carousel-item">
-        <%= image_tag 'fun-event.jpg', class: "d-block w-100", style: 'height:50vw;width:100vw;margin-bottom:0px;' %>
-    </div>
-    <div class="carousel-item">
-        <%= image_tag 'church-event-two.jpg', class: "d-block w-100", style: 'height:50vw;width:100vw;margin-bottom:0px;' %>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
-
-<div style="margin-top:0px; padding-top:55px;" class="container-fluid text-sm-center p-5 bg-primary text-white "> <!-- bg-light is background color & p-5 is padding -->
-    <h1 class="display-2">Event Attendance</h1>
-    <p class="lead">The Best Event Attendance Application on the Web!</p>
+  
 </div>
